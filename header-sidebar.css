@@ -1,0 +1,251 @@
+/*Imported font from google named 'Inter'*/
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Inter;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E1E1E1;
+    padding-top: 85px;
+    padding-left: 195px;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    transition: all 0.3s linear;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/*When the toggle is clicked the body will only have 5% padding so it will move to the left*/
+body.active {
+    padding-left: 2%;
+}
+
+/*CSS for sidebar*/
+.sidebar {
+    z-index: 201;
+    background-color:  #01330A;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 170px;
+    transition: all 0.3s linear;
+}
+
+.sidebar.active {
+    left: -170px;
+}
+
+/*Toggle*/
+.togglebutton {
+    position: absolute;
+    left: 115%;
+    top: 18px; 
+    cursor: pointer;
+}
+
+.togglebutton svg {
+   height: 30px;
+   width: 30px;
+   fill: #01330A;
+}
+
+/*BIOT header*/
+.biotheader {
+    position: absolute;
+    left: 150%;
+}
+
+.contentofbiotheader {
+    height: 66px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.biotheaderp {
+    width: 350px;
+    color: #01330A;
+}
+
+.adminbg {
+    height: 66px;
+    background-color: #01330A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.adminbg img {
+    height: 70px;
+    width: 70px;
+}
+
+.links {
+    position: absolute;
+    margin-top: 20px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.links li {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.links li svg {
+    width: 65px;
+}
+
+.links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 13px;
+    flex: 1;
+    transition: 0.5s;
+}
+
+/*Targets the specific link with bg of white*/
+.links .bgwhite {
+    background-color: #23492c;
+}
+
+.links .bgwhite .colorgreen, .links .bgwhite svg {
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+/*CSS for header*/
+.header {
+    z-index: 200;
+    background-color: #ffffff;
+    color: #01330A;
+    position: fixed;
+    top: 0;
+    left: 170px;
+    right: 0;
+    height: 66px;
+    border: none;
+    transition: all .3s linear;
+    box-shadow: 0 0 2px 3px rgba(162, 162, 162, 0.5);
+}
+
+/*CSS for userprofile on the right*/
+.userprofile {
+    height: 66px;
+    float: right;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.userprofilename {
+    background-color: #01330A;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.userprofilename svg {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    fill: #ffffff;
+}
+
+.userprofilename .bi-caret-down-fill {
+    height: 8px;
+    width: 8px;
+    flex: 1;
+}
+
+.userprofilename p {
+    font-size: 12px;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+/*CSS for dropdown menu*/
+.dropdowncontent {
+    display: none;
+    position: absolute;
+    top: 21px;
+    background-color: #01330A;
+    z-index: 200;
+    width: 100%;
+}
+
+.dropdowncontent ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.dropdowncontent ul li {
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdowncontent li:hover {
+    background-color:  #086401;
+}
+
+.dropdowncontent ul li svg {
+    height: 13px;
+    width: 20px;
+}
+
+.dropdowncontent ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    flex: 1;
+}
+
+.show {
+    display: block;
+}
+
+/*responsiveness*/
+@media (max-width: 680px) {
+
+    body {
+        padding-left: 2%;
+        transition: none;
+    }
+
+    .sidebar {
+        left: -170px;
+    }
+
+    .sidebar.active {
+        width: 170px;
+        left: 0;
+    }
+
+    .header {
+        left: 0;
+    }
+}
